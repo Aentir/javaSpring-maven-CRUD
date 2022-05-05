@@ -9,17 +9,17 @@ import java.util.Calendar;
 import java.util.Date;
 
 @Entity
-@Table(name = "RRHH_PERSONA")
+//@Table(name = "RRHH_PERSONA")
 public class Persona {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "per_nombre", nullable = false)
+    @Column(name = "NOMBRE", nullable = false)
     private String nombre;
     @JsonFormat(pattern = "dd-MM-yyyy")
+    @Column(name = "FECHA_NACIMIENTO", nullable = false)
     private Date fechaNacimiento;
-    @Transient
     private Integer edad;
 
     @Column(length = 10, nullable = true)
