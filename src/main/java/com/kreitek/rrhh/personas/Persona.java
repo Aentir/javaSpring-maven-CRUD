@@ -13,8 +13,7 @@ import java.util.Date;
 public class Persona {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "roleSeq")
-    @SequenceGenerator(name = "roleSeq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(name = "per_nombre", nullable = false)
     private String nombre;
