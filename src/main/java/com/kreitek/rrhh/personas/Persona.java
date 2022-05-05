@@ -20,6 +20,9 @@ public class Persona {
     @Transient
     private Integer edad;
 
+    @Column(length = 10, nullable = true)
+    private String telefono;
+
     public Integer getId() {
         return id;
     }
@@ -55,5 +58,13 @@ public class Persona {
         int d2 = Integer.parseInt(formatter.format(currentDate));
         int age = (d2 - d1) / 10000;
         return age;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }
