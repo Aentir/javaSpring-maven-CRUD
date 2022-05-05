@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 @Entity
+@Table(name = "RRHH_PERSONA")
 public class Persona {
 
     @Id
