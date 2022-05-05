@@ -14,6 +14,7 @@ public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "per_nombre", nullable = false)
     private String nombre;
     @JsonFormat(pattern = "dd-MM-yyyy")
     private Date fechaNacimiento;
