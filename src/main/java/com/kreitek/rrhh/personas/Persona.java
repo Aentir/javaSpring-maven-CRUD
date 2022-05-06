@@ -20,6 +20,7 @@ public class Persona {
     @JsonFormat(pattern = "dd-MM-yyyy")
     @Column(name = "FECHA_NACIMIENTO", nullable = false)
     private Date fechaNacimiento;
+    @Transient
     private Integer edad;
 
     @Column(length = 10, nullable = true)
@@ -51,6 +52,9 @@ public class Persona {
     }
 
     public Integer getEdad() {
+        if (edad == null && fechaNacimiento != null){
+            edad = calculateAge(fechaNacimiento, Calendar.getInstance().getTime());
+        }
         return edad;
     }
 
